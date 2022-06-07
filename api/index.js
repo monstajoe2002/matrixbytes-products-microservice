@@ -17,17 +17,9 @@ app.all('*', function(req, res, next) {
   next();
 });
 
-app.get('/api', async (req,res) => {
-  const db = await mongoClient();
-  if (!db) res.status(500).send('Systems Unavailable');
-
-  const { data } = await axios.get('https://goweather.herokuapp.com/weather/california');
-  await db.collection('weather').insertOne(data);
-
-  return res.send(data);
-});
 
 app.get('/api/products', async (req,res) => {
+  database
   return res.json(products);
 });
 

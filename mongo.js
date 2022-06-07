@@ -1,6 +1,6 @@
 const { MongoClient, ObjectID } = require('mongodb');
 const util = require('util');
-
+require('dotenv').config();
 util.promisify(MongoClient.connect);
 
 const { MONGO_URI, MONGO_DB_NAME } = process.env;
