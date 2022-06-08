@@ -19,7 +19,6 @@ app.all('*', function(req, res, next) {
 
 
 app.get('/api/products', async (req,res) => {
-  database
   return res.json(products);
 });
 
